@@ -22,3 +22,48 @@ Technical Details
     -The maximum size of a range will be 100 integers
     -The starting number of a range will be: 0 < n < 100
  */
+//check if the number 1 existe in string 
+//if existe we take 1 + next number aas a whole number => 16
+//we take the first number and compare it to the next one / 
+//if first number > then next => max = first number /
+//if first number < min => min = first number /
+
+//return array.push(min, max);
+
+function mysteryRange(string, size) {
+  
+  let array = Array.from(string);
+  let min = array[0];
+  let max = array[0];
+  array.length = size;
+
+  let tab = [];
+  
+  if(size > 100){
+    return "the maximum size is 100";
+  } 
+  
+  for(var i = 0; i < array.length; i++){
+    if(array[i] === 1){
+     return array[i] += array[i + 1];
+    }
+    if(array[i] > 100 || array[i] < 0){
+        return "the numbers should be between 0 and 100";
+    }
+
+    if(array[i]< min ){
+      min = array[i];
+    }
+
+    if(array[i] > max){
+      max = array[i];
+    }
+   
+  }
+
+  tab.push(min,max);
+   return tab;
+
+}
+
+//if array[i]= 1 => array[i] = array[i+1]
