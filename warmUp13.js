@@ -4,7 +4,7 @@
 
         Example:
 
-            solution('XXI'); // should return 21
+            ; // should return 21
 
         Help:
 
@@ -17,6 +17,8 @@
             D          500
             M          1,000 
     
+
+
     2. Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
         Examples:
 
@@ -31,3 +33,46 @@
             filter_list([1,'a','b',0,15]) == [1,0,15]
             filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
+
+//1
+function Roman(number) {
+		var array = number.split('');
+		var sum = 0;
+		for(var i = 0; i < array.length; i++) {
+			if(array[i] = 'I'){
+				sum+= 1
+			}
+			else if(array[i] = 'V'){
+				sum+= 5;
+			}
+			else if(array[i] = 'X') {
+				sum+= 10;
+			}
+
+		}
+		return sum;
+
+	}
+
+
+//2
+function searchUnderscore(string) {
+	var arrayString = string.split('');
+	
+	for(var i = 0; i < arrayString.length; i++){
+		if(arrayString.includes('-') || arrayString.includes('_')){
+			return arrayString[i+1].toUpperCase();
+		}
+		return false;
+	}
+}
+function toCamelCase(string) {
+
+}
+
+//3
+function filter_list(array) {
+	return array.filter(function(element){
+		return element > 0 || typeof(element) === 'number';
+	});
+}
