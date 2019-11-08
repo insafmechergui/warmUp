@@ -36,24 +36,71 @@
 
 //1
 function Roman(number) {
-		var array = number.split('');
-		var sum = 0;
-		for(var i = 0; i < array.length; i++) {
-			if(array[i] = 'I'){
-				sum+= 1
-			}
-			else if(array[i] = 'V'){
-				sum+= 5;
-			}
-			else if(array[i] = 'X') {
-				sum+= 10;
-			}
-
+	var array = number.split('');
+	var sum = 0;
+	for(var i = 0; i < array.length; i++) {
+		if(array[i] = 'I'){
+			sum += 1
 		}
-		return sum;
-
+		else if(array[i] = 'V'){
+			sum += 5;
+		}
+		else if(array[i] = 'X') {
+			sum += 10;
+		}
+		else if(array[i] = 'L') {
+			sum += 50;
+		}
+		else if(array[i] = 'C'){
+			sum += 100
+		}
+		else if(array[i] = 'D'){
+			sum += 500;
+		}
+		else if(array[i] = 'M') {
+			sum += 1.000;
+		}
 	}
+	return sum;
 
+}
+//////
+function Roman(roman) {
+	var sum = 0; 
+	var array = roman.split('');
+	for (var i = 0; i < array.length; i++) {
+		switch (array[i]) {
+			case 'I':
+			sum += 1;
+			break;
+			
+			case 'V':
+			sum += 5;
+			break;
+			
+			case 'X':
+			sum += 10;
+			break;
+			
+			case 'L':
+			sum += 50;
+			break;
+			
+			case 'C':
+			sum += 100;
+			break;
+
+			case 'D':
+			sum += 500;
+			break;
+
+			case 'M':
+			sum += 1.000;
+			break;
+		}
+	}
+		return sum;
+}
 
 //2
 function searchUnderscore(string) {
@@ -61,13 +108,9 @@ function searchUnderscore(string) {
 	
 	for(var i = 0; i < arrayString.length; i++){
 		if(arrayString.includes('-') || arrayString.includes('_')){
-			return arrayString[i+1].toUpperCase();
+			 arrayString.slice(i, 1);
 		}
-		return false;
 	}
-}
-function toCamelCase(string) {
-
 }
 
 //3

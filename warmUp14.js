@@ -28,18 +28,17 @@ var maxProfit = function(prices) {
   	if(prices[i] < minimum ){
   		minimum = prices[i];
   	}
+  }
+  for(var i = prices[minimum]; i < prices.length; i++) {
+    if(prices[i] > maximum ){
+      maximum = prices[i];
+    }
+  }  
+  	
+	if( minimum < maximum) {
+		profit = maximum - minimum;
+    return profit;
 
-  	if(prices[i] > maximum ){
-  		maximum = prices[i];
-  	}
-
-		if( prices.indexOf(minimum) > prices.indexOf(maximum)) {
-			profit = maximum - minimum;
-	    }
-		else if( prices.indexOf(minimum) < prices.indexOf(maximum)) {
-			return "no transaction is done";
-	    }
-	}
-
-	return profit;
+  }
+		
 };
