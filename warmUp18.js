@@ -17,19 +17,16 @@
 
 //for string.length
 //compare i by i+1
-
+//+1
 function charOccurrence(string) {
 var str = 0;
 var tab = [];
 	for (var i = 0; i < string.length;i++) {
-		for (var j = 0; j < string.length;j++) {
-			if(string[i] === string[j]){
-
-				str = string[i]+1;
-			console.log(string[i])
-
-
+			if(string.includes(string[i])){
+				tab[i].push(str++);
+			
             }
-}
+		
     }
+    return tab.join('')
 }
